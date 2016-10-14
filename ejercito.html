@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+  <script>
+
+
+
+var warrior_factory = function(nombre, arma, energia, golpe){
+var guerrero={}
+guerrero.nombre=nombre;
+guerrero.arma=arma;
+guerrero.energia= energia;
+guerrero.golpe= golpe
+
+guerrero.golpear=function( target ){
+
+  console.log(this.nombre+' acaba de golpear a '+ target.nombre +' con su '+ this.arma)
+  if (Math.random() > 0.60){
+    target.energia -=this.golpe*10
+    console.log("critical HIT")
+      }
+      else {
+      target.energia -=this.golpe
+      }
+}
+return guerrero
+}
+var thor=warrior_factory('thor','martillo',100,10)
+var loki=warrior_factory('loki','cetro',100,5)
+
+  </script>
+
+  </body>
+</html>
